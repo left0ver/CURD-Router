@@ -1,12 +1,14 @@
 {
-  "version": 2,
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/"
+  "functions": {
+    "api/server.js": {
+      "memory": 1024,
+      "includeFiles": "db.json"
     }
-  ],
-  "github": {
-    "silent": true
-  }
+  },
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "api/server.js"
+    }
+  ]
 }
